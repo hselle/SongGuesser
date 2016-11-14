@@ -12,9 +12,9 @@ Feature: game play multiple choice selection
  
  Scenario: I select the correct answer
    Given I am on the games page
-   When the following answer is correct: Formation
-   And I select the following answer: Formation
-   When I press "submit answer" button
+   And the following answer is correct: Formation
+   When I select the following answer: Formation
+   And I press "submit answer"
    Then I should be on the games page
    And I should see "correct answer"
  

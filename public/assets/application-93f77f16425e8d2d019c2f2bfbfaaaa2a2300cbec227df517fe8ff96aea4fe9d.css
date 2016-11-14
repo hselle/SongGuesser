@@ -10,9 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
@@ -263,9 +264,6 @@ input[type=text]:focus, input[type=password]:focus{
   border-radius: 3px;
 }
 .game-btn{
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #1EBBA6; /* Green */
   border: none;
   color: white;
