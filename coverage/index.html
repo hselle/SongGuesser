@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-14T10:21:57+00:00">2016-11-14T10:21:57+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-14T16:37:51+00:00">2016-11-14T16:37:51+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.02%</span></span>
+    (<span class="covered_percent"><span class="green">92.37%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.04
+         2.05
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>129</b> relevant lines. 
-    <span class="green"><b>120</b> lines covered</span> and
-    <span class="red"><b>9</b> lines missed </span>
+    <b>131</b> relevant lines. 
+    <span class="green"><b>121</b> lines covered</span> and
+    <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,11 +62,11 @@
       
       <tr>
         <td class="strong"><a href="#aed1e8da4bdf90edf59c159038b7815ac256f8fa" class="src_link" title="app/controllers/games_controller.rb">app/controllers/games_controller.rb</a></td>
-        <td class="green strong">95.31 %</td>
-        <td>109</td>
-        <td>64</td>
-        <td>61</td>
-        <td>3</td>
+        <td class="green strong">93.94 %</td>
+        <td>125</td>
+        <td>66</td>
+        <td>62</td>
+        <td>4</td>
         <td>2.8</td>
       </tr>
       
@@ -129,20 +129,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="green">93.6%</span></span>
+    (<span class="covered_percent"><span class="green">92.91%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.08
+         2.09
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>4</b> files in total.
-    <b>125</b> relevant lines. 
-    <span class="green"><b>117</b> lines covered</span> and
-    <span class="red"><b>8</b> lines missed </span>
+    <b>127</b> relevant lines. 
+    <span class="green"><b>118</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -170,11 +170,11 @@
       
       <tr>
         <td class="strong"><a href="#aed1e8da4bdf90edf59c159038b7815ac256f8fa" class="src_link" title="app/controllers/games_controller.rb">app/controllers/games_controller.rb</a></td>
-        <td class="green strong">95.31 %</td>
-        <td>109</td>
-        <td>64</td>
-        <td>61</td>
-        <td>3</td>
+        <td class="green strong">93.94 %</td>
+        <td>125</td>
+        <td>66</td>
+        <td>62</td>
+        <td>4</td>
         <td>2.8</td>
       </tr>
       
@@ -479,11 +479,11 @@
         <div class="source_table" id="aed1e8da4bdf90edf59c159038b7815ac256f8fa">
   <div class="header">
     <h3>app/controllers/games_controller.rb</h3>
-    <h4><span class="green">95.31 %</span> covered</h4>
+    <h4><span class="green">93.94 %</span> covered</h4>
     <div>
-      <b>64</b> relevant lines. 
-      <span class="green"><b>61</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>66</b> relevant lines. 
+      <span class="green"><b>62</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -577,7 +577,7 @@
         <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">            answer = &quot;true&quot;</code>
+          <code class="ruby">            answer = &quot;correct&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -595,7 +595,7 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">            answer = &quot;false&quot;</code>
+          <code class="ruby">            answer = &quot;wrong&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -619,13 +619,13 @@
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">        session[:question_array] ||= [] &lt;&lt; answer</code>
+          <code class="ruby">        session[:question_array] ||= []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        </code>
+          <code class="ruby">        session[:question_array] &lt;&lt; answer</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
@@ -766,82 +766,82 @@
           <code class="ruby">        sound_string = get_sound_string(lyrics[0..300])</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="47">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="47">
           
-          <code class="ruby">        @sound_string = sound_string</code>
+          
+          <code class="ruby">#         sound_string = get_sound_string(&quot;Hey lil&#39; mama would you like to be my sunshine?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="48">
           
-          <code class="ruby">        puts @question_result</code>
+          
+          <code class="ruby"># Nigga touch my gang we gon&#39; turn this shit to Columbine</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">        </code>
+          <code class="ruby"># Ice on my neck cost me 10 times 3</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">        #checks the parameters for the question position</code>
+          <code class="ruby"># 30, 000 dollars for a nigga to get flee</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="51">
           
-          <code class="ruby">        @question_num = session[:question_num] ||= 0  </code>
+          
+          <code class="ruby"># I just hit Rodéo and I spent like 10 Gs</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="52">
           
-          <code class="ruby">        @question_num += 1</code>
+          
+          <code class="ruby"># I just did a show and spent the check on my mama</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">        </code>
+          <code class="ruby"># When I go on vacay I might rent out the Bahamas</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="54">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="54">
           
-          <code class="ruby">        if @question_num &gt; 8</code>
+          
+          <code class="ruby"># And I keep like 10 phones, damn I&#39;m really never home</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">            @question_num = 1</code>
+          <code class="ruby"># All these niggas clones tryna copy what I&#39;m on</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby"># Nigga get your own, tryna pick a nigga bone</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="57">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="57">
           
-          <code class="ruby">        session[:question_num] = @question_num</code>
+          
+          <code class="ruby"># Weight tip the scale, boy I had a good day)&quot;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="58">
           <span class="hits">2</span>
           
-          <code class="ruby">        @question_array = session[:question_array] ||= []</code>
+          <code class="ruby">        @sound_string = sound_string</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="59">
           <span class="hits">2</span>
           
-          <code class="ruby">        puts &quot;#{@question_num} and #{session[:question_array]}&quot;</code>
+          <code class="ruby">        puts @question_result</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
@@ -853,55 +853,55 @@
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="63">
           
-          <code class="ruby">    def get_four_rand_numbers(number_of_songs)</code>
+          
+          <code class="ruby">        #checks the parameters for the question position</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="64">
           <span class="hits">2</span>
           
-          <code class="ruby">        numbers = []</code>
+          <code class="ruby">        @question_num = session[:question_num] ||= 0  </code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="65">
           <span class="hits">2</span>
           
-          <code class="ruby">        while numbers.length &lt; 4     </code>
+          <code class="ruby">        @question_num += 1</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="66">
-          <span class="hits">9</span>
+        <li class="never" data-hits="" data-linenumber="66">
           
-          <code class="ruby">            new_num = rand(0...number_of_songs)</code>
+          
+          <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="67">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="2" data-linenumber="67">
+          <span class="hits">2</span>
           
-          <code class="ruby">           if !numbers.include?(new_num)</code>
+          <code class="ruby">        if @question_num &gt; 8</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="68">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="68">
           
-          <code class="ruby">               numbers.push new_num</code>
+          
+          <code class="ruby">            session.clear</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">           end</code>
+          <code class="ruby">            @question_num = 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
@@ -910,22 +910,22 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="71">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        return numbers</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">    end </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="72">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        session[:question_num] = @question_num</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        @question_array = session[:question_array] ||= []</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
@@ -937,208 +937,304 @@
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">            </code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">    def get_track_id(artist, song)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="77">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        key = &#39;159f7589d4e9ee7d513581b74a5e69b8&#39;</code>
+          <code class="ruby">    def get_four_rand_numbers(number_of_songs)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="78">
           <span class="hits">2</span>
           
-          <code class="ruby">        uri = URI.parse(&quot;https://api.musixmatch.com/ws/1.1/track.search?format=json&amp;q_artist=#{artist}&amp;q_track=#{song}&amp;quorum_factor=1&amp;apikey=#{key}&quot;)</code>
+          <code class="ruby">        numbers = []</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="79">
           <span class="hits">2</span>
           
-          <code class="ruby">        track_id_response = Net::HTTP.get_response(uri)</code>
+          <code class="ruby">        while numbers.length &lt; 4     </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="10" data-linenumber="80">
+          <span class="hits">10</span>
           
-          
-          <code class="ruby">        # print response.body</code>
+          <code class="ruby">            new_num = rand(0...number_of_songs)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="81">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="10" data-linenumber="81">
+          <span class="hits">10</span>
           
-          <code class="ruby">        parsed_json = JSON.parse(track_id_response.body)</code>
+          <code class="ruby">           if !numbers.include?(new_num)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="82">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="8" data-linenumber="82">
+          <span class="hits">8</span>
           
-          <code class="ruby">        track_id = parsed_json[&#39;message&#39;][&#39;body&#39;][&#39;track_list&#39;][0][&#39;track&#39;][&#39;track_id&#39;]</code>
+          <code class="ruby">               numbers.push new_num</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="83">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="83">
           
-          <code class="ruby">        return track_id</code>
+          
+          <code class="ruby">           end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
-          
-          
-          <code class="ruby">       </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def get_lyrics(track_id)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="87">
+        <li class="covered" data-hits="2" data-linenumber="85">
           <span class="hits">2</span>
           
-          <code class="ruby">        key = &#39;159f7589d4e9ee7d513581b74a5e69b8&#39;</code>
+          <code class="ruby">        return numbers</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="89">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="89">
           
-          <code class="ruby">        uri = URI.parse(&quot;https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&amp;apikey=#{key}&amp;track_id=#{track_id}&quot;)</code>
+          
+          <code class="ruby">            </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="90">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
           
-          <code class="ruby">        lyrics_response = Net::HTTP.get_response(uri)</code>
+          <code class="ruby">    def get_track_id(artist, song)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="91">
           <span class="hits">2</span>
           
-          <code class="ruby">        parsed_json = JSON.parse(lyrics_response.body)</code>
+          <code class="ruby">        key = &#39;e80416123e947ffba96dbd43c9ba2a7f&#39;</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="92">
           <span class="hits">2</span>
           
-          <code class="ruby">        lyrics = parsed_json[&#39;message&#39;][&#39;body&#39;][&#39;lyrics&#39;][&#39;lyrics_body&#39;]</code>
+          <code class="ruby">        uri = URI.parse(&quot;https://api.musixmatch.com/ws/1.1/track.search?format=json&amp;q_artist=#{artist}&amp;q_track=#{song}&amp;quorum_factor=1&amp;apikey=#{key}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="94">
           <span class="hits">2</span>
           
-          <code class="ruby">        return lyrics</code>
+          <code class="ruby">        track_id_response = Net::HTTP.get_response(uri)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="95">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def get_sound_string(lyrics)</code>
+          <code class="ruby">        # print response.body</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="96">
           <span class="hits">2</span>
           
-          <code class="ruby">        voice = VoiceRSS.speech({</code>
+          <code class="ruby">        parsed_json = JSON.parse(track_id_response.body)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="covered" data-hits="2" data-linenumber="97">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">            &#39;key&#39; =&gt; &#39;a0ce51728bfb415f9423a6b9851ca4bc&#39;,</code>
+          <code class="ruby">        print parsed_json</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="2" data-linenumber="98">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">            &#39;hl&#39; =&gt; &#39;en-us&#39;,</code>
+          <code class="ruby">        track_id = parsed_json[&#39;message&#39;][&#39;body&#39;][&#39;track_list&#39;][0][&#39;track&#39;][&#39;track_id&#39;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="covered" data-hits="2" data-linenumber="99">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">            &#39;src&#39; =&gt; lyrics,</code>
+          <code class="ruby">        return track_id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
           
           
-          <code class="ruby">            &#39;r&#39; =&gt; &#39;0&#39;,</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
-          <code class="ruby">            &#39;c&#39; =&gt; &#39;mp3&#39;,</code>
+          <code class="ruby">       </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            &#39;f&#39; =&gt; &#39;44khz_16bit_stereo&#39;,</code>
+          <code class="ruby">    def get_lyrics(track_id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="covered" data-hits="2" data-linenumber="103">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">            &#39;ssml&#39; =&gt; &#39;false&#39;,</code>
+          <code class="ruby">        key = &#39;e80416123e947ffba96dbd43c9ba2a7f&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby">            &#39;b64&#39; =&gt; &#39;true&#39;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="covered" data-hits="2" data-linenumber="105">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        })</code>
+          <code class="ruby">        uri = URI.parse(&quot;https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&amp;apikey=#{key}&amp;track_id=#{track_id}&quot;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="106">
           <span class="hits">2</span>
           
-          <code class="ruby">        return voice[&#39;response&#39;]</code>
+          <code class="ruby">        lyrics_response = Net::HTTP.get_response(uri)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="covered" data-hits="2" data-linenumber="107">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        parsed_json = JSON.parse(lyrics_response.body)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="108">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        lyrics = parsed_json[&#39;message&#39;][&#39;body&#39;][&#39;lyrics&#39;][&#39;lyrics_body&#39;]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="109">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        return lyrics</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def get_sound_string(lyrics)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="112">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        voice = VoiceRSS.speech({</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">            &#39;key&#39; =&gt; &#39;a0ce51728bfb415f9423a6b9851ca4bc&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">            &#39;hl&#39; =&gt; &#39;en-us&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">            &#39;src&#39; =&gt; lyrics,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">            &#39;r&#39; =&gt; &#39;0&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">            &#39;c&#39; =&gt; &#39;mp3&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="118">
+          
+          
+          <code class="ruby">            &#39;f&#39; =&gt; &#39;44khz_16bit_stereo&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby">            &#39;ssml&#39; =&gt; &#39;false&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby">            &#39;b64&#39; =&gt; &#39;true&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">        })</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="122">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        return voice[&#39;response&#39;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby">end</code>

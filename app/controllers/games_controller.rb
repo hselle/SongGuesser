@@ -44,6 +44,17 @@ class GamesController < ApplicationController
         track_id = get_track_id(@answer_song[1], @answer_song[0])
         lyrics = get_lyrics(track_id)
         sound_string = get_sound_string(lyrics[0..300])
+#         sound_string = get_sound_string("Hey lil' mama would you like to be my sunshine?
+# Nigga touch my gang we gon' turn this shit to Columbine
+# Ice on my neck cost me 10 times 3
+# 30, 000 dollars for a nigga to get flee
+# I just hit Rodéo and I spent like 10 Gs
+# I just did a show and spent the check on my mama
+# When I go on vacay I might rent out the Bahamas
+# And I keep like 10 phones, damn I'm really never home
+# All these niggas clones tryna copy what I'm on
+# Nigga get your own, tryna pick a nigga bone
+# Weight tip the scale, boy I had a good day)")
         @sound_string = sound_string
         puts @question_result
         
@@ -77,17 +88,19 @@ class GamesController < ApplicationController
         
             
     def get_track_id(artist, song)
-        key = '159f7589d4e9ee7d513581b74a5e69b8'
+        key = 'e80416123e947ffba96dbd43c9ba2a7f'
         uri = URI.parse("https://api.musixmatch.com/ws/1.1/track.search?format=json&q_artist=#{artist}&q_track=#{song}&quorum_factor=1&apikey=#{key}")
+
         track_id_response = Net::HTTP.get_response(uri)
         # print response.body
         parsed_json = JSON.parse(track_id_response.body)
+        print parsed_json
         track_id = parsed_json['message']['body']['track_list'][0]['track']['track_id']
         return track_id
     end
        
     def get_lyrics(track_id)
-        key = '159f7589d4e9ee7d513581b74a5e69b8'
+        key = 'e80416123e947ffba96dbd43c9ba2a7f'
 
         uri = URI.parse("https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&apikey=#{key}&track_id=#{track_id}")
         lyrics_response = Net::HTTP.get_response(uri)
