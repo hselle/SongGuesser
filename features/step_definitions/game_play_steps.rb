@@ -15,8 +15,8 @@ Then /I should see: (.*)/ do |text|
   end
 end
 
-When /I should see either "wrong" or "right"/ do
-  expect(page.body).to match(/wrong|right/)
+When /I should see either "WRONG" or "RIGHT"/ do
+  expect(page.body).to match(/WRONG|RIGHT/)
 end
 
 When /the following answer is incorrect: (.*)/ do |choose, answer|

@@ -24,5 +24,5 @@ Scenario: I select the wrong answer
     When I choose "artist2"
     And I press "submit"
     Then I should be on the games page
-    And I should see either "wrong" or "right"
+    And I should see either "WRONG" or "RIGHT"
    

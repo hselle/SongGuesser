@@ -2,28 +2,25 @@ class GamesController < ApplicationController
     require_relative 'voicerss_tts'
     @question_result = '------------'
     def game_params
-      params.require(:game).permit(:users, :songs, :winner, :loser, :genre, :start_time, :end_time)
+      #params.require(:game).permit(:users, :songs, :winner, :loser, :genre, :start_time, :end_time)
     end
     def show
 
     end
     
     def create
-        puts '------------'
-        puts params[:artist]
-        puts session[:correct_artist]
-        puts '------------'
-        puts session.keys
-
+        
         if params[:artist] == session[:correct_artist]
-            flash[:notice] = "YOURE RIGHT!"
-            @question_result = "you're right"
-            session[:answer => "correct"]
+            flash[:notice] = "YOU'RE RIGHT!"
+            answer = "correct"
         else 
             flash[:notice] = "WRONG"
-            @question_result = "you're right"
-            session[:answer => "incorrect"]
+            answer = "wrong"
         end
+        
+        #adds the question game status to array
+        session[:question_array] ||= []
+        session[:question_array] << answer
         redirect_to games_path
     end
     
@@ -48,18 +45,22 @@ class GamesController < ApplicationController
         lyrics = get_lyrics(track_id)
         sound_string = get_sound_string(lyrics[0..300])
         @sound_string = sound_string
-        puts "#{session[:answer]} is heeeeere Baby!"
         puts @question_result
-      end
-    
-    def get_song_names
-        all_songs = []
-        File.open("/home/ubuntu/workspace/songs.csv", "r").each_line do |line|
-            data = line.split(',')
-            print data
-            all_songs.push data
+        
+        
+        
+        #checks the parameters for the question position
+        @question_num = session[:question_num] ||= 0  
+        @question_num += 1
+        
+        if @question_num > 8
+            session.clear
+            @question_num = 1
         end
-        print all_songs
+    
+        session[:question_num] = @question_num
+        @question_array = session[:question_array] ||= []
+        
     end
     
     def get_four_rand_numbers(number_of_songs)

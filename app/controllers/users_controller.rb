@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     
     
     def user_params
-        params.require(:user).permit(:username, :password, :wins, :losses)
+        #, :wins, :losses
+        params.require(:user).permit(:username, :password)
     end
 
     def login

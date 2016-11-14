@@ -1,4 +1,25 @@
-#maingame  
+#maingame 
+  .question-box
+    - (1..8).each do |i|
+      
+      - if i == @question_num
+        - divclass = 'selected'
+        - childclass = 'ion-help'
+        
+      - elsif @question_array[i-1] == 'correct'
+        - divclass = ''
+        - childclass = 'ion-checkmark-round'
+        
+      - elsif @question_array[i-1] == 'wrong'
+        - divclass = ''
+        - childclass = 'ion-close-round'
+        
+      - else
+        - divclass = ''
+        - childclass = 'ion-help'
+    
+      %div.child{:class => divclass}
+        %i.icon{:class => childclass, :id => @question_array[i]}
   #status-box
     %i.icon.ion-ios-pause
     .bar-box

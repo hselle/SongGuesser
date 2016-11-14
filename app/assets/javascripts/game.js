@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
 
     /** submits the form to the server **/
     function sendResults() {
-        document.querySelector("#submit").submit();
+        document.getElementById("submit").click();
     }
 
     /** update the view witha  countdown **/
@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function() {
     function updateTimer() {
         //get's the current timer and does a floor function to get the value
         //duration has a bug ->  " / " + uncletom.duration.toFixed(2)
-        barbox.innerHTML = (uncletom.currentTime).toFixed(2) + " seconds";
+        barbox.innerHTML = "Playing ... " + (uncletom.currentTime).toFixed(2) + " seconds";
     }
 
     function speakUncle() {
