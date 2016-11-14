@@ -6,7 +6,7 @@ Given /I am on the game play page/ do
 end
 
 Then /I should see (\d+) answer boxes$/ do |count|
-  expect(page).to have_css(answer, count: 4)
+  expect(page).to have_css("answer", count)
 end
 
 When /the following answer is correct: (.*)/ do |choose, answer|

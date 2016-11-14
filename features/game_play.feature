@@ -6,9 +6,9 @@ Feature: game play multiple choice selection
  
  Given I am on the game play page
  
- Scenario: there are four choices on the page
+ Scenario: there are 4 choices on the page
    Given I am on the games page
-   Then I should see four answer boxes
+   Then I should see 4 answer boxes
  
  Scenario: I select the correct answer
    Given I am on the games page
