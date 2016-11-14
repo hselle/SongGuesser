@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     
     def index 
         songs = []
-        File.open("/home/ubuntu/workspace/songs.csv", "r").each_line do |line|
+        File.open("songs.csv", "r").each_line do |line|
             data = line.split(',')
             @song = data[0]
             @artist = data[1]

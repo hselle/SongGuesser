@@ -91,7 +91,7 @@ input[type=text]:focus, input[type=password]:focus{
   cursor: pointer;
   left: calc(100% - 100px);
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
 }
 .dash-body{
   position: absolute;

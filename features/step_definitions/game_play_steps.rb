@@ -5,12 +5,12 @@ Given /I am on the game play page/ do
     page.should have_content("Submit answer")
 end
 
-Then /I should see (\d+) menu item(?:s)?/ do |count, answer|
+Then /I should see (\d+) answer boxes$/ do |count, answer|
   expect(page).to have_css(answer, count: 4)
 end
 
-When /I choose the following correct answer: (.*)/ do |choose, answer|
-  answer.split(', ').each do |field|
+When /the following answer is correct: (.*)/ do |choose|
+  answer.split(' ').each do |field|
   if choose
     choose(answer)
   end
@@ -25,8 +25,8 @@ Then /I should see: (.*)/ do |text|
   end
 end
 
-When /I choose the following incorrect answer: (.*)/ do |choose, answer|
-  answer.split(', ').each do |field|
+When /the following answer is incorrect: (.*)/ do |choose|
+  answer.split(' ').each do |field|
   if choose
     choose(answer)
   end
