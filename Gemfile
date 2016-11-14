@@ -20,7 +20,10 @@ end
 
 group :production do
   gem 'pg'
+
 end
+
+gem 'rails_12factor', group: :production
 
 # Use sqlite3 as the database for Active Record
 
