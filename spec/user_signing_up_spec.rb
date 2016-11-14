@@ -8,8 +8,13 @@ describe 'user_signing up' do
         expect(user).to eq @user
     end
     
-    it 'throws an error when the usezxcxzcrname is not unique' do 
+    it 'throws an error when the username is not unique' do 
         User.create!(:username => "user1")
         expect{User.create!(:username => "user1")}.to raise_error(ActiveRecord::RecordInvalid)
     end
+    
+    # it 'tries to delete a user' do
+    #     User.create!(:username => "user1")
+        
+
 end

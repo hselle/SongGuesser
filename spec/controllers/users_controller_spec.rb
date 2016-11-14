@@ -10,17 +10,12 @@ describe UsersController do
     end
   end
   
+
+  
   describe "post login" do
     it "logs user in" do
-      post :login
-      
-    end
-  end
-  
-    describe "post login" do
-    it "logs user in" do
       post :login, {:login_username => 'cavemanjack', :login_password => '123'}
-      print response.body
+      # print response.should have
       # expect(@user)
       
     end
