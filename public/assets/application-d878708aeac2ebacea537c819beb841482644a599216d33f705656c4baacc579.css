@@ -1,0 +1,265 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
+
+body{
+   /* For browsers that do not support gradients background: #09CB97; */
+  background-color: #F9F8F8;
+  font-family: 'Dosis', sans-serif;
+}
+.box{
+  position: absolute;
+  height: 300px;
+  width: 200px;
+}
+#signup-box{
+  left: 200px;
+}
+#login-box{
+  left: 500px;
+}
+.center-left{
+  left: 50%;
+  transform: translateX(-50%);
+}
+input[type=text], input[type=password]{
+  height: 30px;
+  width: 200px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #FFF;
+  padding: 0 5px;
+  font-family: 'Dosis', sans-serif;
+  background-color:#295440;
+  margin: 10px 0;
+}
+input[type=text]:focus, input[type=password]:focus{
+  outline:none;
+}
+.box p{
+  color: #fff;
+}
+.btn{
+    height: 30px;
+    width: 210px;
+    background-color: #EDECEE;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Dosis', sans-serif;
+}
+.box .btn:hover{
+  background-color: #D4D6DC;
+}
+
+/** dashboard **/
+.dash-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background-color: #09CB97;
+  box-shadow: 1px 1px 10px #888888;
+}
+.dash-header .status{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: 15px;
+  cursor: pointer;
+  left: calc(100% - 100px);
+}
+.dash-body{
+  position: absolute;
+  top:80px;
+  left: 0;
+  width: 90%;
+  height: 100px;
+  padding: 20px;
+}
+.welcome-header{
+  color: #000;
+  font-size: 30px;
+}
+
+/** flash message **/
+.alert-box{
+  position: absolute;
+  height: 40px;
+  width:300px;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #D46360;
+  padding: 1px 10px;
+  color: #fff;
+  z-index: 99;
+  box-shadow: 1px 1px 2px #888888;
+}
+.alert-box i{
+  position: absolute;
+  top: 10px;
+  left: 300px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@-moz-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.fade-out {
+  opacity:1; 
+  -webkit-animation: fadeOut ease-in 1; 
+  -moz-animation:fadeOut ease-in 1;
+  animation:fadeOut ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1.5s;
+  -moz-animation-duration:1.5s;
+  animation-duration:1.5s;
+  
+}
+
+.fade-out-delay{
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
+}
+
+#main{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #09CB97;
+}
+
+/** game styling goes here **/
+#status-box{
+  position: absolute;
+  top: 50px;
+  width: 350px;
+  height: 60px;
+  background-color: #E6F3F8;
+  border-radius: 3px;
+  box-shadow: 1px 3px 15px #d8d8d8;
+  padding: 10px 20px;
+  color: #ABABAA;
+}
+i{
+  position: absolute;
+  font-size: 50px;
+  cursor: pointer;
+  color: #40D0C8;
+}
+.bar-box{
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  height: 40px;
+  width: 300px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+.answers-box{
+  position: absolute;
+  top: 150px;
+  width: 400px;
+  min-height: 100px;
+}
+.answer{
+  position: relative;
+  height: 40px;
+  width: 350px;
+  margin: 5px 0;
+  padding-left: 20px;
+}
+.answer div{
+  position: absolute;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #74CEBA;
+  color: #fff;
+  border-radius: 3px;
+}
+
+/**  radio button styling **/
+.answer input[type="radio"]{
+  visibility: hidden;
+}
+.answer input[type="radio"] + label {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  height: 28px;
+  width: 300px;
+  border-radius: 3px;
+  border: 1px solid #74CEBA;
+  text-indent: 40px;
+  font-size: 14px;
+  line-height: 28px;
+  color: #A0A9B1;
+  cursor: pointer; 
+}
+.answer input[type="radio"]:checked + label {
+  color: #1C907F;
+}
+.songlist{
+  position: absolute;
+  top: 200px;
+  left: 150px;
+}
+.dash-body a{
+  background-color: #09CB97;
+  text-decoration: none;
+  color: #FFF;
+  padding: 10px 25px;
+  border-radius: 3px;
+}
+/*
+.dash-body input[type="submit"]{
+  background-color: #09CB97;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+*/

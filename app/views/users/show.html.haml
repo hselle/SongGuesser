@@ -1,0 +1,9 @@
+.dash-header
+    %a.status{:href => "/user/logout"}
+        Logout
+        %i.icon.ion-power
+.dash-body
+    %p.welcome-header
+        Hello,
+        = @user.username
+    %a{:href => "/games"} Practice

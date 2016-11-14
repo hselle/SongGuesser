@@ -1,0 +1,25 @@
+#status-box
+  %i.icon.ion-ios-pause
+  .bar-box
+    Get Ready ...
+.answers-box
+  %form#my-answers{:action => "/games", :method => "post"}
+    .answer
+      %div 1
+      %input#beyonce{:name => "artist", :type => "radio", :value => "Beyonce Carter"}/
+      %label{:for => "beyonce"} Beyonce Carter
+    .answer
+      %div 2
+      %input#taylorswift{:name => "artist", :type => "radio", :value => "Taylor Swift"}/
+      %label{:for => "taylorswift"} Taylor Swift
+    .answer
+      %div 3
+      %input#lilwayne{:name => "artist", :type => "radio", :value => "Lil Wayne"}/
+      %label{:for => "lilwayne"} Lil Wayne
+%audio#uncletom{:src => ""}
+  Your browser does not support the
+  %code audio
+  element. Sad!
+
+
+

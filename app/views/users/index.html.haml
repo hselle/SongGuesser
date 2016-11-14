@@ -1,0 +1,18 @@
+#main.login
+  %div{:class => "box", :id => "signup-box"}
+    %p Register to Play a Game
+    %form{:id => 'myform', :action => '/users', :method => 'POST'}
+      %input{:type => "text", :id => "username", :placeholder => "Enter Username", :name => "username"}
+      %input{:type => "password", :id => "userpassword", :placeholder => "Enter Password", :name => "password"}
+      %input{:type => "password", :id => "confirmpassword", :placeholder => "Confirm Password"}
+      %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
+        Register
+  %div{:class => "box", :id => "login-box"}
+    %p Login to Play a Game
+    %form{:id => 'loginform', :action => '/users/login', :method => 'POST'}
+      %input{:type => "text", :id => "login_username", :placeholder => "Enter Username", :name => "login_username"}
+      %input{:type => "password", :id => "login_password", :placeholder => "Enter Password", :name => "login_password"}
+      %button.btn#login{:type => "submit", :form => "loginform", :value => "Submit"}
+        Login
+
+= javascript_include_tag 'login'
