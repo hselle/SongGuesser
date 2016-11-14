@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
     require_relative 'voicerss_tts'
-
+    @question_result = '------------'
     def game_params
       params.require(:game).permit(:users, :songs, :winner, :loser, :genre, :start_time, :end_time)
     end
@@ -9,12 +9,20 @@ class GamesController < ApplicationController
     end
     
     def create
+        puts '------------'
         puts params[:artist]
+        puts session[:correct_artist]
+        puts '------------'
+        puts session.keys
+
         if params[:artist] == session[:correct_artist]
-            print "Your're Right"
             flash[:notice] = "YOURE RIGHT!"
+            @question_result = "you're right"
+            session[:answer => "correct"]
         else 
             flash[:notice] = "WRONG"
+            @question_result = "you're right"
+            session[:answer => "incorrect"]
         end
         redirect_to games_path
     end
@@ -33,13 +41,15 @@ class GamesController < ApplicationController
         # print @songs_choices
         print @answer_song[0]
         print @answer_song[1]
-        session[:correct_artist => @answer_song[1]]
+        session[:correct_artist => @answer_song[0]]
+        session[:correct_artist] = @answer_song[0]
         key = '159f7589d4e9ee7d513581b74a5e69b8'
         track_id = get_track_id(@answer_song[1], @answer_song[0])
-        
         lyrics = get_lyrics(track_id)
         sound_string = get_sound_string(lyrics[0..300])
         @sound_string = sound_string
+        puts "#{session[:answer]} is heeeeere Baby!"
+        puts @question_result
       end
     
     def get_song_names

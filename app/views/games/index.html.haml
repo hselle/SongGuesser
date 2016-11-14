@@ -8,11 +8,12 @@
       - @songs_choices.each_with_index do |song, index|
         .answer
           %div #{index + 1}
-          %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => song[0]}/
-          %label{:for => "#{song[0]}"} #{song[0]}
-      %button.game-btn{:type => "submit"}
+          %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => "artist#{index + 1}"}/
+          %label{:for => "artist#{index + 1}"} #{song[0]}
+      %button.game-btn{:type => "submit", :id => "submit"}
         %i.icon.ion-android-checkmark-circle
         Submit Answer
+      %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
 
       
 %audio#uncletom{:src => "#{@sound_string}"}

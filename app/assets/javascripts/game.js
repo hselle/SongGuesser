@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
 
     /** submits the form to the server **/
     function sendResults() {
-        document.querySelector("#my-answers").submit();
+        document.querySelector("#submit").submit();
     }
 
     /** update the view witha  countdown **/

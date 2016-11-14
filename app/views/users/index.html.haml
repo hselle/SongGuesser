@@ -7,6 +7,7 @@
       %input{:type => "password", :id => "confirmpassword", :placeholder => "Confirm Password"}
       %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
         Register
+      %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
   %div{:class => "box", :id => "login-box"}
     %p Login to Play a Game
     %form{:id => 'loginform', :action => '/users/login', :method => 'POST'}
@@ -14,5 +15,6 @@
       %input{:type => "password", :id => "login_password", :placeholder => "Enter Password", :name => "login_password"}
       %button.btn#login{:type => "submit", :form => "loginform", :value => "Submit"}
         Login
+      %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s} 
 
 = javascript_include_tag 'login'
