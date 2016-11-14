@@ -9,7 +9,6 @@ class GamesController < ApplicationController
     end
     
     def create
-        puts '-----------------------'
         puts params[:artist]
         if params[:artist] == session[:correct_artist]
             print "Your're Right"
@@ -17,7 +16,6 @@ class GamesController < ApplicationController
         else 
             flash[:notice] = "WRONG"
         end
-        puts '-----------------------'
         redirect_to games_path
     end
     
