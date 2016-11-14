@@ -1,18 +1,18 @@
 #Verifying that elements of the game play page exists
 
 
-Given /I am on the games page/ do
+Given /I am on the game play page/ do
     page.should have_content("Submit answer")
 end
 
-Then /I should see four answers: (.*) (.*) (.*) (.*)/ do |answer_list|
-  page.should have_content(answer_list)
+Then /I should see (\d+) menu item(?:s)?/ do |count, answer|
+  expect(page).to have_css(answer, count: 4)
 end
 
-When /I choose the following correct answer: (.*)/ do |choose, answer_list|
-  answer_list.split(', ').each do |field|
+When /I choose the following correct answer: (.*)/ do |choose, answer|
+  answer.split(', ').each do |field|
   if choose
-    choose("answer_#{list}")
+    choose(answer)
   end
   end
 end
@@ -25,10 +25,10 @@ Then /I should see: (.*)/ do |text|
   end
 end
 
-When /I choose the following incorrect answer: (.*)/ do |choose, answer_list|
-  answer_list.split(', ').each do |field|
+When /I choose the following incorrect answer: (.*)/ do |choose, answer|
+  answer.split(', ').each do |field|
   if choose
-    choose("answer_#{list}")
+    choose(answer)
   end
   end
 end

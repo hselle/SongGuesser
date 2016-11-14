@@ -8,12 +8,7 @@ Feature: game play multiple choice selection
  
  Scenario: there are four choices on the page
    Given I am on the games page
-   When the following answer is correct: Formation
-   Then I should see the following answer: Formation
-   And I should see the following answer: Gold
-   And I should see the following answer: Caroline
-   And I should see the following answer: Closer
-   
+   Then I should see four answer boxes
  
  Scenario: I select the correct answer
    Given I am on the games page
