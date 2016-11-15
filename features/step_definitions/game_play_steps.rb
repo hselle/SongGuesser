@@ -1,4 +1,4 @@
-#Verifying that elements of the game play page exists
+#Verifying elements of the game play page
 
 
 Given /I am on the game play page/ do

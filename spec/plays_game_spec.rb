@@ -13,6 +13,7 @@ describe 'reading from file' do
         expect(songs[0][1]).to eq("Amine\r\n")
     end
 end
+=begin
 describe 'setting up game' do 
     before do
        @songs = []
@@ -60,7 +61,7 @@ describe 'setting up game' do
     end
         
 end
-=begin
+
         choices_indexes = game_controller.get_four_rand_numbers(songs.length)
         choices_indexes.each do |i|
             choices_indexes.each do |j|

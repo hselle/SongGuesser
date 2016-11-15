@@ -17,10 +17,14 @@ Feature: game play multiple choice selection
   # And I press "submit answer"
   # Then I should be on the games page
   # And I should see "correct answer
+  
+  #Need to try and have a happy path of some sort!!
 
-Scenario: I select the wrong answer
-    Given I am on the games page
-    #When the following answer is correct: Gold
+Scenario: I select the an answer
+    Given the following user is in the database: Jordan 123
+    And I am on the users/1 page
+    When I follow "practice"
+    Then I should be on the games page
     When I choose "artist2"
     And I press "submit"
     Then I should be on the games page

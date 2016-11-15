@@ -21,5 +21,43 @@ describe UsersController do
     end
   end
   
+  describe "post create user" do 
+    it "creates a new user" do 
+      post :create 
+    end
+  end
+  
+  describe "post users index" do 
+    it 'shows the login page' do
+      post :index
+    end
+  end
+  
+  
+  describe 'get new' do 
+    it 'absolutely nothing' do 
+      get :new
+    end
+  end
+  
+  describe 'get show' do
+    it 'shows the user page' do
+      get :show, {:id => 1}
+    end
+  end
+  
+  describe 'deletes: ' do
+    it 'deletes a user' do 
+      delete :destroy, {:id => 1}
+    end
+  end
+end
+=begin
+  describe 'get edit' do
+    it "does nothing" do
+      get :edit, {:id => 1}
+    end
+  end
 end 
+=end
   

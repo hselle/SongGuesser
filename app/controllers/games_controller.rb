@@ -13,9 +13,14 @@ class GamesController < ApplicationController
         if params[:artist] == session[:correct_artist]
             flash[:notice] = "YOU'RE RIGHT!"
             answer = "correct"
+            session[:record] = session[:record] + 'w'
+            session[:song_names] = session[:song_names] + '~' + session[:artist_and_song]
         else 
             flash[:notice] = "WRONG"
             answer = "wrong"
+            session[:record] = session[:record] + 'l'
+            session[:song_names] = session[:song_names] + '~' + session[:artist_and_song]
+
         end
         
         #adds the question game status to array
@@ -26,6 +31,16 @@ class GamesController < ApplicationController
     
     def index 
         songs = []
+        puts session[:user_id]
+        
+        @user = User.find(session[:user_id])
+        if session[:new_game] == 'true' 
+            session[:question_array] = []
+            session[:question_num] = 0
+            session[:new_game] = 'false'
+            session[:record] = ""
+            session[:song_names] = ""
+        end
         File.open("songs.csv", "r").each_line do |line|
             data = line.split(',')
             @song = data[0]
@@ -40,21 +55,13 @@ class GamesController < ApplicationController
         print @answer_song[1]
         session[:correct_artist => @answer_song[0]]
         session[:correct_artist] = @answer_song[0]
+        session[:artist_and_song] = @answer_song[1] + ' - ' + @answer_song[0]
         key = '159f7589d4e9ee7d513581b74a5e69b8'
-        track_id = get_track_id(@answer_song[1], @answer_song[0])
-        lyrics = get_lyrics(track_id)
-        sound_string = get_sound_string(lyrics[0..300])
-#         sound_string = get_sound_string("Hey lil' mama would you like to be my sunshine?
-# Nigga touch my gang we gon' turn this shit to Columbine
-# Ice on my neck cost me 10 times 3
-# 30, 000 dollars for a nigga to get flee
-# I just hit Rodéo and I spent like 10 Gs
-# I just did a show and spent the check on my mama
-# When I go on vacay I might rent out the Bahamas
-# And I keep like 10 phones, damn I'm really never home
-# All these niggas clones tryna copy what I'm on
-# Nigga get your own, tryna pick a nigga bone
-# Weight tip the scale, boy I had a good day)")
+        # track_id = get_track_id(@answer_song[1], @answer_song[0])
+        # lyrics = get_lyrics(track_id)
+        # sound_string = get_sound_string(lyrics[0..300])
+        sound_string = ''
+        print sound_string
         @sound_string = sound_string
         puts @question_result
         
@@ -65,9 +72,10 @@ class GamesController < ApplicationController
         @question_num += 1
         
         if @question_num > 8
-            session.clear
-            redirect_to user_path
-            @question_num = 1
+            print session[:record]
+            print '--------------'
+            redirect_to user_path @user
+            @question_num = 0
         end
     
         session[:question_num] = @question_num

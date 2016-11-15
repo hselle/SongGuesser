@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   root :to => redirect('/users')
-  resources :users
+  resources :users 
   resources :games
   
   post '/users/login', to: 'users#login', controller: 'users_controller'

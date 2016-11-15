@@ -1,4 +1,4 @@
-#Verifying that elements of the login / register page exist
+#Verifying elements of the login / register page
 
 
 Given /I am on the login page/ do
