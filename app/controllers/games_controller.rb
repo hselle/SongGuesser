@@ -66,6 +66,7 @@ class GamesController < ApplicationController
         
         if @question_num > 8
             session.clear
+            redirect_to user_path
             @question_num = 1
         end
     
