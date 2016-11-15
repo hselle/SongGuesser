@@ -34,25 +34,19 @@ describe UsersController do
   end
   
   
-  describe 'get new' do 
-    it 'absolutely nothing' do 
-      get :new
-    end
-  end
-  
   describe 'get show' do
     it 'shows the user page' do
       get :show, {:id => 1}
     end
   end
-  
-  describe 'deletes: ' do
+end
+=begin
+
+ describe 'deletes: ' do
     it 'deletes a user' do 
       delete :destroy, {:id => 1}
     end
   end
-end
-=begin
   describe 'get edit' do
     it "does nothing" do
       get :edit, {:id => 1}

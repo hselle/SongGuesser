@@ -6,23 +6,12 @@ Feature: game play multiple choice selection
  
  Given I am on the game play page
  
-#Scenario: there are 4 choices on the page
-  # Given I am on the games page
- #  Then I should see 4 answer boxes
- 
- #Scenario: I select the correct answer
-   #Given I am on the games page
-#And the following answer is correct: Formation
-  # When I select the following answer: Formation
-  # And I press "submit answer"
-  # Then I should be on the games page
-  # And I should see "correct answer
-  
-  #Need to try and have a happy path of some sort!!
-
 Scenario: I select the an answer
-    Given the following user is in the database: Jordan 123
-    And I am on the users/1 page
+    Given I am on the users page 
+    And I enter the following username: Jordan 
+    And I enter the following password: 123
+    When I press "register" 
+    Then I should be on the users/1 page
     When I follow "practice"
     Then I should be on the games page
     When I choose "artist2"

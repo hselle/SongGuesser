@@ -9,7 +9,12 @@ class GamesController < ApplicationController
     end
     
     def create
-        
+        session[:question_array] ||= []
+        session[:question_num] ||= 0
+        session[:new_game] ||= 'false'
+        session[:record] ||= ""
+        session[:song_names] ||= ""
+        session[:artist_and_song] ||= ""
         if params[:artist] == session[:correct_artist]
             flash[:notice] = "YOU'RE RIGHT!"
             answer = "correct"
@@ -31,8 +36,6 @@ class GamesController < ApplicationController
     
     def index 
         songs = []
-        puts session[:user_id]
-        
         @user = User.find(session[:user_id])
         if session[:new_game] == 'true' 
             session[:question_array] = []
@@ -55,10 +58,10 @@ class GamesController < ApplicationController
         print @answer_song[1]
         session[:correct_artist => @answer_song[0]]
         session[:correct_artist] = @answer_song[0]
-        session[:artist_and_song] = @answer_song[1] + ' - ' + @answer_song[0]
+        session[:artist_and_song] = @answer_song[1].strip + ' - ' + @answer_song[0]
         key = '159f7589d4e9ee7d513581b74a5e69b8'
-        # track_id = get_track_id(@answer_song[1], @answer_song[0])
-        # lyrics = get_lyrics(track_id)
+        track_id = get_track_id(@answer_song[1], @answer_song[0])
+        lyrics = get_lyrics(track_id)
         # sound_string = get_sound_string(lyrics[0..300])
         sound_string = ''
         print sound_string
@@ -74,6 +77,7 @@ class GamesController < ApplicationController
         if @question_num > 8
             print session[:record]
             print '--------------'
+            session[:song_names] = session[:song_names][1..-1]
             redirect_to user_path @user
             @question_num = 0
         end

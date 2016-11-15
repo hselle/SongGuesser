@@ -15,12 +15,15 @@ class UsersController < ApplicationController
     def login
       #puts params[:login_username]
       #puts params[:login_password]
-      print session["song_names"] = ""
-      print session["record"] = ""
-
+      session["song_names"] = ""
+      session["record"] = ""
+      session["song_names"] = ""
       @user = User.find_by_username(params[:login_username])
       session[:new_game] = 'true'
       if @user == nil 
+          puts "------------"
+          puts "found it to be nil"
+          puts "___________"
           flash[:notice] = "Invalid username or password"
           flash.keep(:notice)
           redirect_to users_path
@@ -28,6 +31,7 @@ class UsersController < ApplicationController
           if params[:login_password] == @user.pasword
             session[:username] = @user.username
              #puts @user
+              session[:user_id] = @user.id
               redirect_to user_path(@user)
           else
               flash[:notice] = "Invalid username or password"
@@ -35,15 +39,19 @@ class UsersController < ApplicationController
               redirect_to users_path  
           end
       end
-      session[:user_id] = @user.id
     end
     
     def show
+        session["song_names"] ||= ""
+        session["record"] ||= ""
+        session["song_names"] ||= ""
         id = params[:id]
         @user = User.find(id)
         print session["record"]
         session[:new_game] = 'true'
         print session["song_names"].split("~")
+        @songs_to_display = session["song_names"].split("~")
+        @record = session["record"].split
     end
 
         
@@ -54,6 +62,7 @@ class UsersController < ApplicationController
             # speech = Speech.new("READY TO HEAR RAP OVERLY ARTICULATED?")
             # speech.speak
             @user = User.find_by_username(params[:username])
+            session["user_id"] = @user.id
             redirect_to user_path(@user)
             
         rescue ActiveRecord::RecordInvalid
