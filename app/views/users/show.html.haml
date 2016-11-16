@@ -6,4 +6,5 @@
     %p.welcome-header
         Hello,
         = @user.username
+        = @user.records[0]
     %a{:href => "/games", :id => "practice"} Practice
