@@ -60,6 +60,8 @@ $(document).on('turbolinks:load', function() {
     function speakUncle() {
         changeBtn("play");
         uncletom.play();
+        //show the button now
+        document.querySelector(".game-btn").classList.remove("hide-me");
     }
 
     // Assign an ontimeupdate event to the <video> element, and execute a function if the current playback position has changed

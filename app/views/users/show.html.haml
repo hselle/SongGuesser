@@ -1,4 +1,5 @@
 .dash-header
+    %i.icon.ion-ios-infinite
     %a.status{:href => "/user/logout"}
         Logout
         %i.icon.ion-power
@@ -6,5 +7,35 @@
     %p.welcome-header
         Hello,
         = @user.username
-        = @user.records
     %a{:href => "/games", :id => "play"} Play
+.gradient-body
+    .stats-body
+        .menu-title
+            %label{:for => "statistics"} Summary
+            %label{:for => "details"} Game Details
+        %input#statistics{:checked => "checked", :name => "panel", :type => "radio"}
+        #summary-body.stats-box{:checked => "checked"}
+            %table.stats-table
+                %tr
+                    %td #{@correct_answers}
+                    %td #{@incorrect_answers}
+                %tr
+                    %td
+                        %i.icon.ion-happy-outline
+                        Win
+                    %td
+                        %i.icon.ion-sad-outline
+                        Loss
+        %input#details{:name => "panel", :type => "radio"}
+        #details-body.stats-box
+            .game-table
+                - @game_records.each_with_index do |record, index|
+                    %label.header{:for => "r#{index}"}
+                        Round #{index+1}
+                        %i.icon.ion-ios-arrow-right
+                    %input{:name => "game-groups", :type => "radio", :id => "r#{index}"}
+                    .song-group
+                        %ul
+                            - @game_songs[index].each_with_index do |song, idx|
+                                %li #{@game_records[index][idx]} : #{song}
+
