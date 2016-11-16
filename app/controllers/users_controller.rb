@@ -52,7 +52,8 @@ class UsersController < ApplicationController
         @user = User.find(id)
         @user.records = ['llllllll']
         @user.wins = 'w'
-        print @user.records[0]
+        puts "_____________________________"
+        puts @user.records
         # print session["record"]
         session[:new_game] = 'true'
         print session["song_names"].split("~")
