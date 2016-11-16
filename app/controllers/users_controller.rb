@@ -47,7 +47,8 @@ class UsersController < ApplicationController
         session["song_names"] ||= ""
         id = params[:id]
         @user = User.find(id)
-        @user.records = ['4', '4']
+        @user.records = ['llllllll']
+        @user.wins = 'w'
         print @user.records[0]
         # print session["record"]
         session[:new_game] = 'true'
