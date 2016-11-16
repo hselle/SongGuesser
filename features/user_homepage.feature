@@ -7,28 +7,15 @@ Feature: user homepage stats
 Scenario: Logged in looking for games log
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
-  Then I should see "Your games:"
+  Then I should see "Questions guessed correctly"
   
-Scenario: logged in looking for personal ranking
+Scenario: Logged in looking for games log
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
-  Then I should see "Ranking"
+  Then I should see "Questions guessed incorrectly"
   
 Scenario: logged in and ready to play
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
   Then I should see "Play"
   
-Scenario: no games to show
-  Given the following user is in the database: Jordan 123
-  And I am on the users/1 page
-  When I want to see my games
-  But there are no games to show
-  Then I should see "No games currently available"
-  
-Scenario: no ranking to show
-  Given the following user is in the database: Jordan 123
-  And I am on the users/1 page
-  When I want to see my ranking
-  But there is no ranking to show
-  Then I should see "No ranking currently available"

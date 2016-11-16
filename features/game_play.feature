@@ -12,7 +12,7 @@ Scenario: I select an answer
     And I enter the following password: 123
     When I press "register" 
     Then I should be on the users/1 page
-    When I follow "practice"
+    When I follow "play"
     Then I should be on the games page
     When I choose "artist2"
     And I press "submit"

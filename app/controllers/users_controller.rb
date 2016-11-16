@@ -24,9 +24,7 @@ class UsersController < ApplicationController
 
       session[:new_game] = 'true'
       if @user == nil 
-          puts "------------"
-          puts "found it to be nil"
-          puts "___________"
+
           flash[:notice] = "Invalid username or password"
           flash.keep(:notice)
           redirect_to users_path
@@ -35,6 +33,7 @@ class UsersController < ApplicationController
             session[:username] = @user.username
              #puts @user
               session[:user_id] = @user.id
+              session[:game_ended] = 'false'
               redirect_to user_path(@user)
           else
               flash[:notice] = "Invalid username or password"
@@ -50,21 +49,45 @@ class UsersController < ApplicationController
         session["song_names"] ||= ""
         id = params[:id]
         @user = User.find(id)
-        @user.records = ['llllllll']
-        @user.wins = 'w'
-        puts "_____________________________"
-        puts @user.records
         # print session["record"]
         session[:new_game] = 'true'
-        print session["song_names"].split("~")
-        @songs_to_display = session["song_names"].split("~")
-        @record = session["record"].split
-    end
+        if session[:game_ended] == 'true'
+            @user.records << session["record"]
+            @user.songs << session["song_names"]
+            record_array = session["record"].split("")
+            for i in 0...record_array.length
+                puts record_array[i]
+                if record_array[i].strip == 'w'
+                    game_wins = "#{game_wins}#{record_array[i]}"
+                else 
+                    game_losses = "#{game_losses}#{record_array[i]}"
+                end
+            end
+            @user.wins = "#{@user.wins}#{game_wins}"
+            @user.losses = "#{@user.losses}#{game_losses}"
+            session[:game_ended] = 'false'
+            @user.save!
+        end
+        print 'wins'
+        puts @user.wins
+        print 'losses'
+        puts @user.losses
+        print 'songs'
+        print @user.songs
+        @user.songs.each do |title|
+          puts title
+        end
+        print 'records'
+        @user.records.each do |title|
+          puts title
+        end
+end
 
         
     
     def create
         begin
+            session.clear
             user = User.create!(username: params[:username], pasword: params[:password])
             # speech = Speech.new("READY TO HEAR RAP OVERLY ARTICULATED?")
             # speech.speak

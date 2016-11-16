@@ -5,8 +5,6 @@ Given /I am on the game play page/ do
     page.should have_content("Submit answer")
 end
 
-
-
 Then /I should see: (.*)/ do |text|
   if page.respond_to? :should
     page.should have_content("correct answer")

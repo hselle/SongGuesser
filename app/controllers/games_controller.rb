@@ -60,8 +60,8 @@ class GamesController < ApplicationController
         session[:correct_artist] = @answer_song[0]
         session[:artist_and_song] = @answer_song[1].strip + ' - ' + @answer_song[0]
         key = '159f7589d4e9ee7d513581b74a5e69b8'
-        track_id = get_track_id(@answer_song[1], @answer_song[0])
-        lyrics = get_lyrics(track_id)
+        # track_id = get_track_id(@answer_song[1], @answer_song[0])
+        # lyrics = get_lyrics(track_id)
         # sound_string = get_sound_string(lyrics[0..300])
         sound_string = ''
         print sound_string
@@ -76,8 +76,8 @@ class GamesController < ApplicationController
         
         if @question_num > 8
             print session[:record]
-            print '--------------'
             session[:song_names] = session[:song_names][1..-1]
+            session[:game_ended] = 'true'
             redirect_to user_path @user
             @question_num = 0
         end
