@@ -291,22 +291,23 @@ body{
 }
 
 /** game styling goes here **/
+
 #status-box{
   position: absolute;
   top: 100px;
   width: 350px;
   height: 60px;
-  background-color: #E6F3F8;
+  background-color: #1EBBA6;
   border-radius: 3px;
   box-shadow: 1px 3px 15px #d8d8d8;
   padding: 10px 20px;
-  color: #ABABAA;
+  color: #E6F3F8;
 }
 #status-box i.icon{
   position: absolute;
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
-  color: #40D0C8;
+  color: #E6F3F8;
   text-shadow: 1px 1px 5px #888888;
 }
 .bar-box{
@@ -343,10 +344,12 @@ body{
   font-size: 18px;
   text-align: center;
   line-height: 30px;
-  background-color: #74CEBA;
+  background-color: #1EBBA6;
   color: #fff;
   border-radius: 3px;
 }
+
+
 
 /**  radio button styling **/
 .answer input[type="radio"]{
@@ -359,7 +362,7 @@ body{
   height: 28px;
   width: 300px;
   border-radius: 3px;
-  border: 1px solid #74CEBA;
+  border: 1px solid #1EBBA6;
   text-indent: 40px;
   font-size: 14px;
   line-height: 28px;
@@ -367,10 +370,10 @@ body{
   cursor: pointer; 
 }
 .answer input[type="radio"]:checked + label {
-  color: #1C907F;
+ color: #1C907F;
 }
 .answer input[type="radio"]:checked + label::after {
-  content: "\f375";
+  content: "\f47a";
   font-family: "ionicons";
   font-size: 16px;
   text-align: center;
@@ -477,6 +480,7 @@ button:focus{
 .stats-body .menu-title {
   height: 50px;
   width: 100%;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 .stats-body .menu-title label {

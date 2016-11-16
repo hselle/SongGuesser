@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function() {
         } else if (status == 'stop') {
             statusbtn.className = "icon ion-stop";
         } else if (status == 'timer') {
-            statusbtn.className = "icon ion-ios-stopwatch-outline";
+            statusbtn.className = "icon ion-ios-stopwatch";
         }
     }
     /** 

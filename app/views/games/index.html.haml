@@ -36,7 +36,7 @@
           %input{:name => "artist", :type => "radio", :value => "#{song[0]}", :id => "artist#{index + 1}"}/
           %label{:for => "artist#{index + 1}"} #{song[0]}
       %button.game-btn.hide-me{:type => "submit", :id => "submit"}
-        %i.icon.ion-android-checkmark-circle
+        %i.icon.ion-ios-paw
         Submit Answer
       %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
 
