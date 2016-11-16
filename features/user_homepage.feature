@@ -7,7 +7,7 @@ Feature: user homepage stats
 Scenario: Logged in looking for games log
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
-  And I should see "Your games:"
+  Then I should see "Your games:"
   
   
 Scenario: logged in looking for personal ranking
@@ -29,7 +29,7 @@ Scenario: no games to show
   Then I should see "No games currently available"
   
 Scenario: no ranking to show
-  Given: the following user is in the database: Jordan 123
+  Given the following user is in the database: Jordan 123
   And I am on the users/1 page
   When I want to see my ranking
   But there is no ranking to show
