@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     
     def user_params
         #
-        params.require(:user).permit(:username, :password, :wins, :losses, :songs, :records,:song_images)
+        params.require(:user).permit(:username, :password, :wins, :losses, :songs, :records, :song_images)
     end
 
     def login
@@ -18,10 +18,12 @@ class UsersController < ApplicationController
       session["song_names"] = ""
       session["record"] = ""
       session["song_names"] = ""
-      @user.records = ['llllllll']
-      puts @user.records[0]
+
 
       @user = User.find_by_username(params[:login_username])
+      puts @user.records[0]
+
+      @user.records = ['llllllll']
       session[:new_game] = 'true'
       if @user == nil 
           puts "------------"

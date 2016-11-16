@@ -9,12 +9,10 @@ Scenario: Logged in looking for games log
   And I am on the users/1 page
   Then I should see "Your games:"
   
-  
 Scenario: logged in looking for personal ranking
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
   Then I should see "Ranking"
-  
   
 Scenario: logged in and ready to play
   Given the following user is in the database: Jordan 123
