@@ -7,12 +7,12 @@ Feature: user homepage stats
 Scenario: Logged in looking for games log
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
-  Then I should see "Questions guessed correctly"
+  Then I should see "Win"
   
 Scenario: Logged in looking for games log
   Given the following user is in the database: Jordan 123
   And I am on the users/1 page
-  Then I should see "Questions guessed incorrectly"
+  Then I should see "Loss"
   
 Scenario: logged in and ready to play
   Given the following user is in the database: Jordan 123

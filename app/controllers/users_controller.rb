@@ -60,11 +60,7 @@ class UsersController < ApplicationController
         set_user_stats
         set_user_game_songs
         set_user_game_records
-        p @correct_answers
-        p @incorrect_answers
-        p @correct_inccorect_percentage
-        p @game_records
-        p @game_songs
+
     end
     
     def set_user_stats

@@ -62,9 +62,7 @@ class GamesController < ApplicationController
         key = '159f7589d4e9ee7d513581b74a5e69b8'
         track_id = get_track_id(@answer_song[1], @answer_song[0])
         lyrics = get_lyrics(track_id)
-        print lyrics
         sound_string = get_sound_string(lyrics[0..300])
-        print sound_string[0..300]
         @sound_string = sound_string
         puts @question_result
         
