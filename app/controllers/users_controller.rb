@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     
     
     def user_params
-        #, :wins, :losses
-        params.require(:user).permit(:username, :password)
+        #
+        params.require(:user).permit(:username, :password, :wins, :losses, :songs, :records,:song_images)
     end
 
     def login
@@ -47,7 +47,9 @@ class UsersController < ApplicationController
         session["song_names"] ||= ""
         id = params[:id]
         @user = User.find(id)
-        print session["record"]
+        @user.records = ['4', '4']
+        print @user.records[0]
+        # print session["record"]
         session[:new_game] = 'true'
         print session["song_names"].split("~")
         @songs_to_display = session["song_names"].split("~")

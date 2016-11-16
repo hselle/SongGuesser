@@ -13,11 +13,9 @@ describe GamesController do
     end
   end
   
-
-  
   describe 'get index' do 
     it 'shows the games page' do
-      expect(get :index).to raise_error(ActiveRecord::RecordNotFound)
+      expect {get :index}.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

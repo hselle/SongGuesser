@@ -36,6 +36,7 @@ describe UsersController do
   
   describe 'get show' do
     it 'shows the user page' do
+      post :create
       get :show, {:id => 1}
     end
   end
