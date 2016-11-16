@@ -37,5 +37,12 @@
                     .song-group
                         %ul
                             - @game_songs[index].each_with_index do |song, idx|
-                                %li #{@game_records[index][idx]} : #{song}
+                                -if @game_records[index][idx] == 'w'
+                                    %li.happy
+                                        %i.icon.ion-happy-outline 
+                                        #{song}
+                                - else
+                                    %li.sad
+                                        %i.icon.ion-sad-outline 
+                                        #{song}
 
