@@ -21,9 +21,7 @@ class UsersController < ApplicationController
 
 
       @user = User.find_by_username(params[:login_username])
-      puts @user.records[0]
 
-      @user.records = ['llllllll']
       session[:new_game] = 'true'
       if @user == nil 
           puts "------------"
