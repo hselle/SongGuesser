@@ -18,6 +18,8 @@ class UsersController < ApplicationController
       session["song_names"] = ""
       session["record"] = ""
       session["song_names"] = ""
+      @user.records = ['llllllll']
+
       @user = User.find_by_username(params[:login_username])
       session[:new_game] = 'true'
       if @user == nil 

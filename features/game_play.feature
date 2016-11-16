@@ -6,7 +6,7 @@ Feature: game play multiple choice selection
  
  Given I am on the game play page
  
-Scenario: I select the an answer
+Scenario: I select an answer
     Given I am on the users page 
     And I enter the following username: Jordan 
     And I enter the following password: 123
