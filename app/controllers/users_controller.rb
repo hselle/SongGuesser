@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
       puts params
       @user = User.find_by_username(params[:login_username])
+      #initializing class variables to nil to meet cucumber tests
 
       session[:new_game] = 'true'
       if @user == nil 
@@ -59,15 +60,22 @@ class UsersController < ApplicationController
         set_user_stats
         set_user_game_songs
         set_user_game_records
-
+        p @correct_answers
+        p @incorrect_answers
+        p @correct_inccorect_percentage
+        p @game_records
+        p @game_songs
     end
     
     def set_user_stats
+        puts @user.wins
+        puts @user.losses
+
         if @user.wins.include?("w") || @user.losses.include?("l")
             correct_answers_number = @user.wins.length
             incorrect_answers_number = @user.losses.length
             if correct_answers_number != 0 || incorrect_answers_number != 0
-                @correct_inccorect_percentage = "#{((correct_answers_number/incorrect_answers_number)*100).round}%"
+                @correct_inccorect_percentage = "#{((correct_answers_number.to_f/incorrect_answers_number)*100).round}%"
             else 
                 puts "no percentage"
                 @correct_inccorect_percentage = "#{0.to_s}%"
@@ -75,34 +83,31 @@ class UsersController < ApplicationController
             @correct_answers = correct_answers_number.to_s
             @incorrect_answers = incorrect_answers_number.to_s
         else
-            @correct_answers = '0'
-            @incorrect_answers = '0'
-            @correct_inccorect_percentage = '0'
+            @correct_answers = '0%'
+            @incorrect_answers = '0%'
+            @correct_inccorect_percentage = '0%'
         end
-        puts ((correct_answers_number/incorrect_answers_number)*100).to_s
-        puts @correct_answers
-        puts @incorrect_answers
-        puts @correct_inccorect_percentage
     end
     
     def set_user_game_records
+        @game_records = []
         if @user.records.include?(",")
             game_record_strings_array = @user.records.split(",")
-            @game_records = game_record_strings_array[1..-1].split("")
-        else
-            @game_sames = [[]]
+            for i in 1...game_record_strings_array.length
+                @game_records[i-1] = game_record_strings_array[i].split("")
+            end
         end
-        puts @game_records
     end
     
     def set_user_game_songs
-        if @user.records.include?("|||")
-            game_record_strings_array = @user.records.split("|||")
-            @game_songs = game_record_strings_array[1..-1].split("~")
-        else
-            @game_sames = [[]]
+        @game_songs = []
+        if @user.songs.include?("|||") 
+            puts 'got songs'
+            game_song_strings_array = @user.songs.split("|||")
+            for i in 1...game_song_strings_array.length
+                @game_songs[i-1] = game_song_strings_array[i].split("~")
+            end
         end
-        puts @game_songs
     end
     
     def save_user_game_info 

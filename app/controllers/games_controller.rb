@@ -60,11 +60,9 @@ class GamesController < ApplicationController
         session[:correct_artist] = @answer_song[0]
         session[:artist_and_song] = @answer_song[1].strip + ' - ' + @answer_song[0]
         key = '159f7589d4e9ee7d513581b74a5e69b8'
-        # track_id = get_track_id(@answer_song[1], @answer_song[0])
-        # lyrics = get_lyrics(track_id)
-        # sound_string = get_sound_string(lyrics[0..300])
-        sound_string = ''
-        print sound_string
+        track_id = get_track_id(@answer_song[1], @answer_song[0])
+        lyrics = get_lyrics(track_id)
+        sound_string = get_sound_string(lyrics[0..300])
         @sound_string = sound_string
         puts @question_result
         

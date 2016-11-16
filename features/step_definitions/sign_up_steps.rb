@@ -10,6 +10,11 @@ end
 
 When /the following user is in the database: (.*) (.*)$/ do |name, password| 
     user = User.create!(username: name, pasword: password)
+    user.wins ||= ""
+    user.losses ||= ""
+    user.songs ||= ""
+    user.records ||= ""
+    user.save!
 end
     
 When /I log in with the following user: (.*) (.*)/ do |name, pass|
