@@ -5,7 +5,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :pasword
       t.string :wins
       t.string :losses
-      #t.game :game
+      t.string :records
+      t.string :songs
     end
   end
 end

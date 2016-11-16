@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116000959) do
+ActiveRecord::Schema.define(version: 20161116020207) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "pasword"
     t.string "wins"
     t.string "losses"
-    t.string "records",     default: "--- []\n"
-    t.string "songs",       default: "--- []\n"
-    t.string "song_images", default: "--- []\n"
+    t.string "records"
+    t.string "songs"
   end
 
 end

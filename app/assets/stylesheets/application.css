@@ -21,39 +21,166 @@ body{
   background-color: #F9F8F8;
   font-family: 'Dosis', sans-serif;
 }
-.box{
+#main.login input[type="radio"] {
+  display: none;
+}
+
+.center-container {
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container-login {
   position: absolute;
-  height: 300px;
-  width: 200px;
+  height: 50px;
+  width: 600px;
 }
-#signup-box{
-  left: 200px;
+
+#ordiv {
+  position: absolute;
+  left: 270px;
+  top: 10px;
+  color: #fff;
+  font-size: 18px;
 }
-#login-box{
-  left: 500px;
+
+.container-login label {
+  position: relative;
+  display: block;
+  height: 35px;
+  width: 180px;
+  float: left;
+  background-color: #F4F9FC;
+  border-radius: 3px;
+  margin: 2px 50px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 1px 2px 8px #888888;
+  color: #09CB97;
+  cursor: pointer;
 }
+
+.container-login label:hover {
+  box-shadow: 1px 5px 10px #888888;
+}
+
+.action-form {
+  position: absolute;
+  height: 320px;
+  width: 600px;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F4F9FC;
+  border-radius: 2px;
+  box-shadow: 1px 1px 8px #888888;
+}
+
+#login-form,
+#signup-form {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.form-block {
+  position: relative;
+  height: 100%;
+  width: 45%;
+  float: left;
+}
+
+
+/** The input box styling **/
+
+.action-form input[type=text],
+.action-form input[type=password] {
+  height: 30px;
+  width: 220px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #4A4A4E;
+  padding: 0 5px;
+  font-family: 'Dosis', sans-serif;
+  background-color: #DCE1E4;
+  margin: 10px 0;
+}
+
+.action-form label {
+  font-size: 14px;
+}
+
+.action-form input[type=text]:focus,
+.action-form input[type=password]:focus {
+  outline: none;
+}
+
+.action-form .form-title {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 20px;
+  color: #4A4A4E;
+}
+
+.action-form .form-title i {
+  margin-left: 10px;
+}
+
+
+/** tab logic **/
+
+#cancel-page:checked + .action-form {
+  display: none;
+}
+
+#login-page:checked + #login-form {
+  display: block;
+}
+
+#signup-page:checked + #signup-form {
+  display: block;
+}
+
+.action-form .cancel-label {
+  text-decoration: underline;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#login-form {
+  top: 80px;
+  display: none;
+}
+
+#signup-form {
+  top: 20px;
+  display: none;
+}
+
+.action-form .btn {
+  height: 30px;
+  width: 230px;
+  color: #fff;
+  background-color: #09CB97;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  font-family: 'Dosis', sans-serif;
+}
+
 .center-left{
   left: 50%;
   transform: translateX(-50%);
 }
-input[type=text], input[type=password]{
-  height: 30px;
-  width: 200px;
-  border: none;
-  border-radius: 2px;
-  font-size: 14px;
-  color: #FFF;
-  padding: 0 5px;
-  font-family: 'Dosis', sans-serif;
-  background-color:#295440;
-  margin: 10px 0;
-}
-input[type=text]:focus, input[type=password]:focus{
-  outline:none;
-}
-.box p{
-  color: #fff;
-}
+
 .btn{
     height: 30px;
     width: 210px;
@@ -310,4 +437,7 @@ button:focus{
 .question-box .child.selected{
   background-color: #40D0C8;
   color: #fff;
+}
+.alert-box-hidden{
+  visibility: hidden;
 }

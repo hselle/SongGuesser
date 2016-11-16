@@ -1,20 +1,45 @@
+- if flash[:notice]
+  .alert-box.fade-out.fade-out-delay
+    %p.message= flash[:notice]
+    %i.icon.ion-ios-close-empty
 #main.login
-  %div{:class => "box", :id => "signup-box"}
-    %p Register to Play a Game
-    %form{:id => 'myform', :action => '/users', :method => 'POST'}
-      %input{:type => "text", :id => "username", :placeholder => "Enter Username", :name => "username"}
-      %input{:type => "password", :id => "userpassword", :placeholder => "Enter Password", :name => "password"}
-      %input{:type => "password", :id => "confirmpassword", :placeholder => "Confirm Password"}
-      %button.btn#register{:type => "submit", :form => "myform", :value => "Submit"}
-        Register
-      %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
-  %div{:class => "box", :id => "login-box"}
-    %p Login to Play a Game
-    %form{:id => 'loginform', :action => '/users/login', :method => 'POST'}
-      %input{:type => "text", :id => "login_username", :placeholder => "Enter Username", :name => "login_username"}
-      %input{:type => "password", :id => "login_password", :placeholder => "Enter Password", :name => "login_password"}
-      %button.btn#login{:type => "submit", :form => "loginform", :value => "Submit"}
-        Login
-      %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s} 
-
+  .container-login.center-container
+    %label{:for => "login-page"} Login
+    #ordiv - or -
+    %label{:for => "signup-page"} Sign Up
+    
+  %input#cancel-page{:checked => "checked", :name => "action", :type => "radio"}
+  .action-form
+    %input#login-page{:name => "action", :type => "radio"}
+    #login-form
+      .form-block.form-title
+        %h2
+          Login
+          %i.icon.ion-ios-arrow-right
+      .form-block
+        %form{:action => "/users/login", :method => "POST"}
+          %label{:for => "usernameSignUp"} Username
+          %input#usernameSignIn{:name => "login_username", :type => "text"}
+          %label{:for => "passwordSignUp"} Password
+          %input#passwordSignIn{:name => "login_password", :type => "password"}
+          %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s} 
+          %button#login.btn{:type => "submit", :value => "Submit"} Login
+        %label.cancel-label{:for => "cancel-page"} Cancel
+    %input#signup-page{:name => "action", :type => "radio"}
+    #signup-form
+      .form-block.form-title
+        %h2
+          Sign Up
+          %i.icon.ion-android-person-add
+      .form-block
+        %form{:action => "/users", :method => "POST"}
+          %label{:for => "usernameSignUp"} Username
+          %input#usernameSignUp{:name => "username", :type => "text"}
+          %label{:for => "passwordSignUp"} Password
+          %input#passwordSignUp{:name => "password", :type => "password"}
+          %label{:for => "confirmPasswordSignUp"} Confirm Password
+          %input#confirmPasswordSignUp{:type => "password"}
+          %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s} 
+          %button#register.btn{:type => "submit", :value => "Submit"} Register
+        %label.cancel-label{:for => "cancel-page"} Cancel
 = javascript_include_tag 'login'

@@ -1,3 +1,7 @@
+- if flash[:notice]
+  .alert-box-hidden
+    %p.message= flash[:notice]
+    %i.icon.ion-ios-close-empty
 #maingame 
   .question-box
     - (1..8).each do |i|

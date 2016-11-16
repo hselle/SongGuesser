@@ -13,16 +13,16 @@ When /the following user is in the database: (.*) (.*)$/ do |name, password|
 end
     
 When /I log in with the following user: (.*) (.*)/ do |name, pass|
-    fill_in 'login_username', :with => name
-    fill_in 'login_password', :with => pass
+    fill_in 'usernameSignIn', :with => name
+    fill_in 'passwordSignIn', :with => pass
 end
     
 When /I enter the following username: (.*)$/ do |name|
-    fill_in 'username', :with => name
+    fill_in 'usernameSignUp', :with => name
 end
 
 When /I enter the following password: (.*)$/ do |pass|
-    fill_in 'password', :with => pass
+    fill_in 'passwordSignUp', :with => pass
 end
     
 Then /I should see (.*) text box and (.*) text box/ do |username, password|

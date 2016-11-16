@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       session["record"] = ""
       session["song_names"] = ""
 
-
+      puts params
       @user = User.find_by_username(params[:login_username])
 
       session[:new_game] = 'true'
@@ -47,14 +47,67 @@ class UsersController < ApplicationController
         session["song_names"] ||= ""
         session["record"] ||= ""
         session["song_names"] ||= ""
+
         id = params[:id]
         @user = User.find(id)
+
         # print session["record"]
         session[:new_game] = 'true'
         if session[:game_ended] == 'true'
-            @user.records << session["record"]
-            @user.songs << session["song_names"]
-            record_array = session["record"].split("")
+            save_user_game_info
+        end
+        set_user_stats
+        set_user_game_songs
+        set_user_game_records
+
+    end
+    
+    def set_user_stats
+        if @user.wins.include?("w") || @user.losses.include?("l")
+            correct_answers_number = @user.wins.length
+            incorrect_answers_number = @user.losses.length
+            if correct_answers_number != 0 || incorrect_answers_number != 0
+                @correct_inccorect_percentage = "#{((correct_answers_number/incorrect_answers_number)*100).round}%"
+            else 
+                puts "no percentage"
+                @correct_inccorect_percentage = "#{0.to_s}%"
+            end
+            @correct_answers = correct_answers_number.to_s
+            @incorrect_answers = incorrect_answers_number.to_s
+        else
+            @correct_answers = '0'
+            @incorrect_answers = '0'
+            @correct_inccorect_percentage = '0'
+        end
+        puts ((correct_answers_number/incorrect_answers_number)*100).to_s
+        puts @correct_answers
+        puts @incorrect_answers
+        puts @correct_inccorect_percentage
+    end
+    
+    def set_user_game_records
+        if @user.records.include?(",")
+            game_record_strings_array = @user.records.split(",")
+            @game_records = game_record_strings_array[1..-1].split("")
+        else
+            @game_sames = [[]]
+        end
+        puts @game_records
+    end
+    
+    def set_user_game_songs
+        if @user.records.include?("|||")
+            game_record_strings_array = @user.records.split("|||")
+            @game_songs = game_record_strings_array[1..-1].split("~")
+        else
+            @game_sames = [[]]
+        end
+        puts @game_songs
+    end
+    
+    def save_user_game_info 
+        record_array = session["record"].split("")
+        if record_array.length == 8
             for i in 0...record_array.length
                 puts record_array[i]
                 if record_array[i].strip == 'w'
@@ -63,35 +116,37 @@ class UsersController < ApplicationController
                     game_losses = "#{game_losses}#{record_array[i]}"
                 end
             end
+            #using strings to store number of wins and losses due to migration troubles
             @user.wins = "#{@user.wins}#{game_wins}"
             @user.losses = "#{@user.losses}#{game_losses}"
+            #same goes for records and songs, they use delimiters to designate between games
+            #arrays in migrations are super hard janet
+            @user.records = "#{@user.records},#{session[:record]}"
+            @user.songs = "#{@user.songs}|||#{session[:song_names]}"
             session[:game_ended] = 'false'
             @user.save!
         end
-        print 'wins'
-        puts @user.wins
-        print 'losses'
-        puts @user.losses
-        print 'songs'
-        print @user.songs
-        @user.songs.each do |title|
-          puts title
-        end
-        print 'records'
-        @user.records.each do |title|
-          puts title
-        end
-end
-
-        
+    end
     
     def create
         begin
             session.clear
+            session["song_names"] ||= ""
+            session["record"] ||= ""
+            session["song_names"] ||= ""
+
+
             user = User.create!(username: params[:username], pasword: params[:password])
-            # speech = Speech.new("READY TO HEAR RAP OVERLY ARTICULATED?")
-            # speech.speak
             @user = User.find_by_username(params[:username])
+            
+            @user.wins ||= ""
+            @user.losses ||= ""
+            @user.songs ||= ""
+            @user.records ||= ""
+            @user.save!
+            set_user_stats
+            set_user_game_songs
+            set_user_game_records
             session["user_id"] = @user.id
             redirect_to user_path(@user)
             
