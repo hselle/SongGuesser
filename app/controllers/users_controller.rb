@@ -141,10 +141,10 @@ class UsersController < ApplicationController
             user = User.create!(username: params[:username], pasword: params[:password])
             @user = User.find_by_username(params[:username])
             
-            @user.wins ||= ""
-            @user.losses ||= ""
-            @user.songs ||= ""
-            @user.records ||= ""
+            @user.wins ||= [""]
+            @user.losses ||= [""]
+            @user.songs ||= [""]
+            @user.records ||= [""]
             @user.save!
             set_user_stats
             set_user_game_songs
