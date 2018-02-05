@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       #puts params[:login_password]
       session["song_names"] = ""
       session["record"] = ""
-      session["song_names"] = ""
+      session["songs"] = ""
 
       puts params
       @user = User.find_by_username(params[:login_username])
@@ -135,7 +135,7 @@ class UsersController < ApplicationController
             session.clear
             session["song_names"] ||= ""
             session["record"] ||= ""
-            session["song_names"] ||= ""
+            session["songs"] ||= ""
 
 
             user = User.create!(username: params[:username], pasword: params[:password])
@@ -143,7 +143,7 @@ class UsersController < ApplicationController
             
             @user.wins ||= [""]
             @user.losses ||= [""]
-            @user.song_names ||= [""]
+            @user.songs||= [""]
             @user.records ||= [""]
             @user.save!
             set_user_stats
