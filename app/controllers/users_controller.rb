@@ -66,7 +66,8 @@ class UsersController < ApplicationController
     def set_user_stats
         puts @user.wins
         puts @user.losses
-        @user.wins = ["w","l"]
+        @user.wins = ["w"]
+        @user.losses = ["l"]
         if @user.wins.include?("w") || @user.losses.include?("l")
             correct_answers_number = @user.wins.length
             incorrect_answers_number = @user.losses.length
